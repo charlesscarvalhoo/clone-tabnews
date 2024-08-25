@@ -1,0 +1,22 @@
+services:
+  database:
+    image: postgres:16.0-alpine3.18
+    environment:
+      - POSTGRES_PASSWORD=local_password
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - database
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=charles@localhost.com
+      - PGADMIN_DEFAULT_PASSWORD=123456
+    ports:
+      - "8080:80"
+
+networks:
+  default:
+    name: "local-network"
+    external: true
