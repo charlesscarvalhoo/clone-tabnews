@@ -5,16 +5,16 @@ services:
       - ../.env
     ports:
       - 5432:5432
-  pgadmin:
-    image: dpage/pgadmin4
-    depends_on:
-      - database
-    env_file:
-      - ../.env
-    ports:
-      - "16543:80"
+#   pgadmin:
+#     image: dpage/pgadmin4
+#     depends_on:
+#       - database
+#     env_file:
+#       - ../.env
+#     ports:
+#       - "16543:80"
 
-networks:
-  default:
-    name: "local-network"
-    external: true
+# networks:
+#   default:
+#     name: "local-network"
+#     external: true
